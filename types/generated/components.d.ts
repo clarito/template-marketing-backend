@@ -55,10 +55,9 @@ export interface FooterFormCheckbox extends Schema.Component {
     Desc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -125,10 +124,9 @@ export interface HomeAdvantagesPanel extends Schema.Component {
     Desc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       >;
     Icon: Attribute.Media & Attribute.Required;
@@ -145,10 +143,9 @@ export interface HomeFaqPanel extends Schema.Component {
     Desc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -232,10 +229,9 @@ export interface HomeServicesPanel extends Schema.Component {
     Desc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       >;
     SeparatorTitle: Attribute.String &
@@ -265,10 +261,9 @@ export interface HomeStatsPanel extends Schema.Component {
     Desc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       >;
   };
@@ -284,10 +279,9 @@ export interface HomeTeamPanel extends Schema.Component {
     Desc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       >;
     Image: Attribute.Media & Attribute.Required;

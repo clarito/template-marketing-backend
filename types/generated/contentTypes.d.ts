@@ -523,6 +523,50 @@ export interface PluginWebsiteBuilderLog extends Schema.CollectionType {
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 50;
+      }>;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -674,50 +718,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
-  info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 50;
-      }>;
-    code: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -738,10 +738,9 @@ export interface ApiFooterFooter extends Schema.SingleType {
     Desc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -998,10 +997,9 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     HeroDesc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -1064,10 +1062,9 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     AboutDesc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -1150,10 +1147,9 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     StatsDesc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -1208,10 +1204,9 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     AdvantagesDesc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -1266,10 +1261,9 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     TeamDesc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -1324,10 +1318,9 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     ServicesDesc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       >;
     ServicesPanels: Attribute.Component<'home.services-panel', true> &
@@ -1377,10 +1370,9 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     ReviewsDesc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -1451,10 +1443,9 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     FaqDesc: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
+        'plugin::ckeditor5.CKEditor',
         {
-          output: 'HTML';
-          preset: 'light';
+          preset: 'simple';
         }
       > &
       Attribute.SetPluginOptions<{
@@ -1680,10 +1671,10 @@ declare module '@strapi/types' {
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::website-builder.log': PluginWebsiteBuilderLog;
+      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::i18n.locale': PluginI18NLocale;
       'api::footer.footer': ApiFooterFooter;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::not-found-page.not-found-page': ApiNotFoundPageNotFoundPage;
