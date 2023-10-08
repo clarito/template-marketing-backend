@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_link_button",
+  "info": {
+    "displayName": "Link Button"
+  },
+  "options": {},
+  "attributes": {
+    "ButtonTitle": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Url": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_footer_form_inputs",
+  "info": {
+    "displayName": "Form Input"
+  },
+  "options": {},
+  "attributes": {
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Description",
+        "Name",
+        "Email",
+        "Phone",
+        "Age",
+        "Price",
+        "Promo code",
+        "Pieces",
+        "Job position",
+        "Custom"
+      ],
+      "default": "Name",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Placeholder": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Required": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

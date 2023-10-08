@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_footer_social_medium",
+  "info": {
+    "displayName": "Social Medium"
+  },
+  "options": {},
+  "attributes": {
+    "CompanyName": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Url": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

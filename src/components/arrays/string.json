@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_home_string",
+  "info": {
+    "displayName": "String"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text",
+      "default": ".",
+      "required": true
+    }
+  }
+}

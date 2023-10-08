@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_markdown",
+  "info": {
+    "displayName": "Markdown",
+    "icon": "filter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Desc": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

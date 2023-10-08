@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_home_services_panel_prices",
+  "info": {
+    "displayName": "Services Panel - Price"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Value": {
+      "type": "decimal",
+      "default": 0,
+      "required": true
+    },
+    "Currency": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Desc": {
+      "type": "text",
+      "default": ".",
+      "required": true
+    },
+    "ButtonType": {
+      "type": "enumeration",
+      "enum": ["Gallery", "Link"],
+      "default": "Link",
+      "required": true
+    },
+    "GalleryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.gallery-button",
+      "required": true
+    },
+    "LinkButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.link-button",
+      "required": true
+    }
+  }
+}

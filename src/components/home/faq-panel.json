@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_home_faq_panel",
+  "info": {
+    "displayName": "Faq Panel"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text",
+      "default": ".",
+      "required": true
+    },
+    "Desc": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "preset": "simple"
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_home_services_panels",
+  "info": {
+    "displayName": "Services Panel"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Desc": {
+      "type": "customField",
+      "options": {
+        "preset": "simple"
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "required": true
+    },
+    "SeparatorTitle": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Included": {
+      "type": "component",
+      "repeatable": true,
+      "component": "arrays.string",
+      "required": true
+    },
+    "PriceBlockExist": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "PriceBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.services-panel-price",
+      "required": true
+    }
+  }
+}

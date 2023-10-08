@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_home_team_panel",
+  "info": {
+    "displayName": "Team Panel"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Desc": {
+      "type": "customField",
+      "options": {
+        "preset": "simple"
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "required": true
+    },
+    "Image": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

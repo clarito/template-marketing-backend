@@ -1,0 +1,53 @@
+globalThis.CKEditorConfig = {
+  configs: {
+    simple: {
+      /* Styles for this specific editor.
+            This will be passed into the editor's parent container. */
+
+      styles: `
+            .ck.ck-content.ck-editor__editable {
+               font-size: 15px; 
+            }
+            .ck.ck-content.ck-editor__editable a {
+               color: inherit;
+               text-decoration: underline; 
+            }
+            `,
+ 
+      field: {
+        key: "Simple",
+        value: "simple",
+        metadatas: {
+          intlLabel: {
+            id: "ckeditor5.preset.simple.label",
+            defaultMessage: "Simple version",
+          },
+        },
+      }, 
+      editorConfig: { 
+        plugins: [
+          CKEditor5.autoformat.Autoformat,
+          CKEditor5.basicStyles.Bold,
+          CKEditor5.basicStyles.Italic,
+          CKEditor5.essentials.Essentials,
+          CKEditor5.indent.Indent,
+          CKEditor5.link.Link,
+          CKEditor5.list.List,
+          CKEditor5.paragraph.Paragraph,
+          CKEditor5.pasteFromOffice.PasteFromOffice,
+        ], 
+        toolbar: [ 
+          "undo",
+          "redo",
+          "|",
+          "bold",
+          "italic",
+          "link",
+          "|", 
+          "bulletedList",
+          "numberedList",
+        ],
+      },
+    },
+  },
+};

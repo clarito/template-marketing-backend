@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_arrays_emails",
+  "info": {
+    "displayName": "Email",
+    "icon": "attachment",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Email": {
+      "type": "email",
+      "required": true
+    }
+  }
+}

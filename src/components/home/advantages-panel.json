@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_home_advantages_panels",
+  "info": {
+    "displayName": "Advantages Panel"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": ".",
+      "required": true
+    },
+    "Desc": {
+      "type": "customField",
+      "options": {
+        "preset": "simple"
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "required": true
+    },
+    "Icon": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
