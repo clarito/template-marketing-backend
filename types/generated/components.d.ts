@@ -8,7 +8,7 @@ export interface ArraysEmails extends Schema.Component {
     description: '';
   };
   attributes: {
-    Email: Attribute.Email & Attribute.Required;
+    Email: Attribute.Email & Attribute.Required & Attribute.DefaultTo<'.'>;
   };
 }
 
@@ -20,18 +20,6 @@ export interface ArraysImage extends Schema.Component {
   };
   attributes: {
     Image: Attribute.Media & Attribute.Required;
-  };
-}
-
-export interface ArraysMarkdown extends Schema.Component {
-  collectionName: 'components_home_markdown';
-  info: {
-    displayName: 'Markdown';
-    icon: 'filter';
-    description: '';
-  };
-  attributes: {
-    Desc: Attribute.RichText & Attribute.Required;
   };
 }
 
@@ -64,7 +52,8 @@ export interface FooterFormCheckbox extends Schema.Component {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
   };
 }
 
@@ -128,7 +117,8 @@ export interface HomeAdvantagesPanel extends Schema.Component {
         {
           preset: 'simple';
         }
-      >;
+      > &
+      Attribute.DefaultTo<'.'>;
     Icon: Attribute.Media & Attribute.Required;
   };
 }
@@ -152,7 +142,8 @@ export interface HomeFaqPanel extends Schema.Component {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
   };
 }
 
@@ -233,7 +224,8 @@ export interface HomeServicesPanel extends Schema.Component {
         {
           preset: 'simple';
         }
-      >;
+      > &
+      Attribute.DefaultTo<'.'>;
     SeparatorTitle: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'.'>;
@@ -265,7 +257,8 @@ export interface HomeStatsPanel extends Schema.Component {
         {
           preset: 'simple';
         }
-      >;
+      > &
+      Attribute.DefaultTo<'.'>;
   };
 }
 
@@ -283,8 +276,20 @@ export interface HomeTeamPanel extends Schema.Component {
         {
           preset: 'simple';
         }
-      >;
+      > &
+      Attribute.DefaultTo<'.'>;
     Image: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface HomeTrustedPanel extends Schema.Component {
+  collectionName: 'components_home_trusted_panels';
+  info: {
+    displayName: 'Trusted Panel';
+  };
+  attributes: {
+    URL: Attribute.String & Attribute.Required & Attribute.DefaultTo<'.'>;
+    Logo: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -293,7 +298,6 @@ declare module '@strapi/types' {
     export interface Components {
       'arrays.emails': ArraysEmails;
       'arrays.image': ArraysImage;
-      'arrays.markdown': ArraysMarkdown;
       'arrays.string': ArraysString;
       'footer.form-checkbox': FooterFormCheckbox;
       'footer.form-input': FooterFormInput;
@@ -307,6 +311,7 @@ declare module '@strapi/types' {
       'home.services-panel': HomeServicesPanel;
       'home.stats-panel': HomeStatsPanel;
       'home.team-panel': HomeTeamPanel;
+      'home.trusted-panel': HomeTrustedPanel;
     }
   }
 }

@@ -9,7 +9,8 @@
   "attributes": {
     "Email": {
       "type": "email",
-      "required": true
+      "required": true,
+      "default": "."
     }
   }
 }

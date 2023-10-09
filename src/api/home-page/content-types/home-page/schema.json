@@ -66,6 +66,7 @@
         }
       },
       "type": "customField",
+      "default": ".",
       "options": {
         "preset": "simple"
       },
@@ -147,7 +148,8 @@
         "preset": "simple"
       },
       "customField": "plugin::ckeditor5.CKEditor",
-      "required": true
+      "required": true,
+      "default": "."
     },
     "AboutImages": {
       "type": "media",
@@ -183,15 +185,15 @@
       "default": false,
       "required": true
     },
-    "TrustedImages": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": ["images"],
+    "TrustedPanels": {
+      "type": "component",
+      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
+      "component": "home.trusted-panel",
       "required": true
     },
     "StatsSeparator": {
@@ -248,7 +250,8 @@
         "preset": "simple"
       },
       "customField": "plugin::ckeditor5.CKEditor",
-      "required": true
+      "required": true,
+      "default": "."
     },
     "StatsPanels": {
       "type": "component",
@@ -315,7 +318,8 @@
         "preset": "simple"
       },
       "customField": "plugin::ckeditor5.CKEditor",
-      "required": true
+      "required": true,
+      "default": "."
     },
     "AdvantagesPanels": {
       "type": "component",
@@ -382,7 +386,8 @@
         "preset": "simple"
       },
       "customField": "plugin::ckeditor5.CKEditor",
-      "required": true
+      "required": true,
+      "default": "."
     },
     "TeamPanels": {
       "type": "component",
@@ -444,7 +449,8 @@
         "preset": "simple"
       },
       "customField": "plugin::ckeditor5.CKEditor",
-      "required": true
+      "required": true,
+      "default": "."
     },
     "ServicesPanels": {
       "type": "component",
@@ -511,7 +517,8 @@
         "preset": "simple"
       },
       "customField": "plugin::ckeditor5.CKEditor",
-      "required": true
+      "required": true,
+      "default": "."
     },
     "ReviewsMoreButtonTitle": {
       "pluginOptions": {
@@ -598,7 +605,8 @@
         "preset": "simple"
       },
       "customField": "plugin::ckeditor5.CKEditor",
-      "required": true
+      "required": true,
+      "default": "."
     },
     "FaqPanels": {
       "type": "component",

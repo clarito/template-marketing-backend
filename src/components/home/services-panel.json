@@ -16,7 +16,8 @@
         "preset": "simple"
       },
       "customField": "plugin::ckeditor5.CKEditor",
-      "required": true
+      "required": true,
+      "default": "."
     },
     "SeparatorTitle": {
       "type": "string",

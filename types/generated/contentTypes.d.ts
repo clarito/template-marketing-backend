@@ -747,7 +747,8 @@ export interface ApiFooterFooter extends Schema.SingleType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
     Copyrights: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1006,7 +1007,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
     HeroButtonTitle: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1071,7 +1073,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
     AboutImages: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1100,7 +1103,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<false>;
-    TrustedImages: Attribute.Media &
+    TrustedPanels: Attribute.Component<'home.trusted-panel', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1156,7 +1159,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
     StatsPanels: Attribute.Component<'home.stats-panel', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1213,7 +1217,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
     AdvantagesPanels: Attribute.Component<'home.advantages-panel', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1270,7 +1275,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
     TeamPanels: Attribute.Component<'home.team-panel', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1322,7 +1328,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         {
           preset: 'simple';
         }
-      >;
+      > &
+      Attribute.DefaultTo<'.'>;
     ServicesPanels: Attribute.Component<'home.services-panel', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1379,7 +1386,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
     ReviewsMoreButtonTitle: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1452,7 +1460,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'.'>;
     FaqPanels: Attribute.Component<'home.faq-panel', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{

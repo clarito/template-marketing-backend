@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_home_trusted_panels",
+  "info": {
+    "displayName": "Trusted Panel"
+  },
+  "options": {},
+  "attributes": {
+    "URL": {
+      "type": "string",
+      "required": true,
+      "default": "."
+    },
+    "Logo": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
