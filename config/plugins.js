@@ -23,6 +23,9 @@ module.exports = ({ env }) => ({
           trigger: {
             type: "manual",
           },
+          body: {
+            clear_cache: true,
+          },
         },
       ],
     },
