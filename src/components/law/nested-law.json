@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_law_nested_laws",
+  "info": {
+    "displayName": "Nested Law Panel",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text",
+      "required": true,
+      "default": "."
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "LastUpdate": {
+      "type": "datetime",
+      "required": true
+    },
+    "Panel": {
+      "type": "component",
+      "repeatable": true,
+      "component": "law.nested-law-panel-item",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_law_laws",
+  "info": {
+    "displayName": "Law Panel",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text",
+      "required": true,
+      "default": "."
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "LastUpdate": {
+      "type": "datetime",
+      "required": true
+    },
+    "Desc": {
+      "type": "customField",
+      "required": true,
+      "options": {
+        "preset": "simple"
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "default": "."
+    }
+  }
+}

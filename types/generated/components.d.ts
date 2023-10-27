@@ -293,6 +293,63 @@ export interface HomeTrustedPanel extends Schema.Component {
   };
 }
 
+export interface LawLaw extends Schema.Component {
+  collectionName: 'components_law_laws';
+  info: {
+    displayName: 'Law Panel';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.Text & Attribute.Required & Attribute.DefaultTo<'.'>;
+    Icon: Attribute.Media & Attribute.Required;
+    LastUpdate: Attribute.DateTime & Attribute.Required;
+    Desc: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'simple';
+        }
+      > &
+      Attribute.DefaultTo<'.'>;
+  };
+}
+
+export interface LawNestedLawPanelItem extends Schema.Component {
+  collectionName: 'components_law_nested_law_panels_item';
+  info: {
+    displayName: 'Nested Law Panel - Item';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.Text & Attribute.Required & Attribute.DefaultTo<'.'>;
+    Desc: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'simple';
+        }
+      > &
+      Attribute.DefaultTo<'.'>;
+  };
+}
+
+export interface LawNestedLaw extends Schema.Component {
+  collectionName: 'components_law_nested_laws';
+  info: {
+    displayName: 'Nested Law Panel';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.Text & Attribute.Required & Attribute.DefaultTo<'.'>;
+    Icon: Attribute.Media & Attribute.Required;
+    LastUpdate: Attribute.DateTime & Attribute.Required;
+    Panel: Attribute.Component<'law.nested-law-panel-item', true> &
+      Attribute.Required;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -312,6 +369,9 @@ declare module '@strapi/types' {
       'home.stats-panel': HomeStatsPanel;
       'home.team-panel': HomeTeamPanel;
       'home.trusted-panel': HomeTrustedPanel;
+      'law.law': LawLaw;
+      'law.nested-law-panel-item': LawNestedLawPanelItem;
+      'law.nested-law': LawNestedLaw;
     }
   }
 }

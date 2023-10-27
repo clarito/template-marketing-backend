@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_law_nested_law_panels_item",
+  "info": {
+    "displayName": "Nested Law Panel - Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text",
+      "required": true,
+      "default": "."
+    },
+    "Desc": {
+      "type": "customField",
+      "required": true,
+      "options": {
+        "preset": "simple"
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "default": "."
+    }
+  }
+}

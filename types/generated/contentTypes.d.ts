@@ -1492,6 +1492,113 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiLawPageLawPage extends Schema.SingleType {
+  collectionName: 'law_pages';
+  info: {
+    singularName: 'law-page';
+    pluralName: 'law-pages';
+    displayName: 'LawPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    WebsiteTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'.'>;
+    UpdateTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'.'>;
+    Panels: Attribute.DynamicZone<['law.law', 'law.nested-law']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    UrlTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'.'>;
+    Title: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'.'>;
+    Desc: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'simple';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'.'>;
+    ContentSeparator: Attribute.String &
+      Attribute.Unique &
+      Attribute.CustomField<
+        'plugin::ui-separator.ui-separator',
+        {
+          value: 'CONTENT';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::law-page.law-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::law-page.law-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::law-page.law-page',
+      'oneToMany',
+      'api::law-page.law-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiNotFoundPageNotFoundPage extends Schema.SingleType {
   collectionName: 'not_found_pages';
   info: {
@@ -1686,6 +1793,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::footer.footer': ApiFooterFooter;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::law-page.law-page': ApiLawPageLawPage;
       'api::not-found-page.not-found-page': ApiNotFoundPageNotFoundPage;
       'api::seo.seo': ApiSeoSeo;
     }
