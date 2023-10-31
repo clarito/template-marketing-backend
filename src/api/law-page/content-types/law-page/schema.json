@@ -36,35 +36,15 @@
       "required": true,
       "default": "."
     },
-    "Panels": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "dynamiczone",
-      "components": ["law.law", "law.nested-law"],
-      "required": true
-    },
     "UrlTitle": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string",
       "required": true,
-      "unique": true,
-      "default": "."
-    },
-    "Title": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "text",
-      "required": true,
+      "unique": false,
       "default": "."
     },
     "Desc": {
@@ -91,6 +71,73 @@
       "unique": true,
       "options": {
         "value": "CONTENT"
+      },
+      "customField": "plugin::ui-separator.ui-separator"
+    },
+    "LawPanelsExist": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "NestedLawPanelsExist": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "LawPanels": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "law.law",
+      "required": true,
+      "min": 1
+    },
+    "NestedLawPanels": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "law.nested-law",
+      "required": true,
+      "min": 1
+    },
+    "ShortcutTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "default": "."
+    },
+    "DropDownPanelsSeparator": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "unique": true,
+      "options": {
+        "value": "DROP DOWN PANELS"
       },
       "customField": "plugin::ui-separator.ui-separator"
     }

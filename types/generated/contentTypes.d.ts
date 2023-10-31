@@ -1009,7 +1009,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'.'>;
-    HeroButtonTitle: Attribute.String &
+    HeroServicesButtonTitle: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1525,27 +1525,11 @@ export interface ApiLawPageLawPage extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'.'>;
-    Panels: Attribute.DynamicZone<['law.law', 'law.nested-law']> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     UrlTitle: Attribute.String &
       Attribute.Required &
-      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'.'>;
-    Title: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Attribute.DefaultTo<'.'>;
@@ -1569,6 +1553,63 @@ export interface ApiLawPageLawPage extends Schema.SingleType {
         'plugin::ui-separator.ui-separator',
         {
           value: 'CONTENT';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LawPanelsExist: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    NestedLawPanelsExist: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    LawPanels: Attribute.Component<'law.law', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
+    NestedLawPanels: Attribute.Component<'law.nested-law', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
+    ShortcutTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'.'>;
+    DropDownPanelsSeparator: Attribute.String &
+      Attribute.Unique &
+      Attribute.CustomField<
+        'plugin::ui-separator.ui-separator',
+        {
+          value: 'DROP DOWN PANELS';
         }
       > &
       Attribute.SetPluginOptions<{

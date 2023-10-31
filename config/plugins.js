@@ -18,6 +18,16 @@ module.exports = ({ env }) => ({
     config: {
       builds: [
         {
+          name: "Test",
+          url: env("WEBSITE_DEPLOY_TEST_KEY"),
+          trigger: {
+            type: "manual",
+          },
+          body: {
+            clear_cache: true,
+          },
+        },
+        {
           name: "Website",
           url: env("WEBSITE_DEPLOY_KEY"),
           trigger: {
